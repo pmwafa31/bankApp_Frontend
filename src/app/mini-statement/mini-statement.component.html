@@ -1,0 +1,42 @@
+<nav class="navbar navbar-light  mt-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/dashboard">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/261/594/original/banking-app-icon-on-white-background-free-vector.jpg">&nbsp;
+        JanaSeva Bank
+      </a>
+      <form class="d-flex" role="search">
+        <input (keyup)="search($event)" id="search" class="form-control me-2" type="search" placeholder="Search Transaction Type" aria-label="Search">
+        <!-- <button class="btn btn-outline-warning" type="submit">Search</button> -->
+      </form>
+    </div>
+  </nav>
+
+<div class="container m-4">
+    <div class="d-flex">
+      <h3 class="text-primary">Transaction History</h3>
+    </div>
+    <div>
+      <table class="table table-success table-striped border text-center m-4">
+        <thead >
+          <tr>
+            <th scope="col">Sl.No</th>
+            <th scope="col">Transaction ype</th>
+            <th scope="col">From Account</th>
+            <th scope="col">To Account</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor = "let tran of transactionArray | filter : searchKey : 'type' ; let i = index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ tran.type }}</td>
+            <td>{{ tran.fromAcno }}</td>
+            <td>{{ tran.toAcno }}</td>
+            <td>{{ tran.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="generatePDF()" class="btn btn-warning" type="submit">Download Statement</button>
+    </div>
+    
+</div>

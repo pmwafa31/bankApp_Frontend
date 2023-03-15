@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #5e617e;
+}
+a{
+    color: rgb(241, 229, 229);
+}
+img{
+    height: 30px;
+    width: 25px;
+}
+button{
+    float: right;
+}

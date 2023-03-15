@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Lora:ital@0;1&family=Montserrat:wght@500;600;700&family=Sevillana&family=Source+Serif+Pro:ital,wght@0,300;1,200&display=swap');
+
+body{
+    font-family: 'Source Serif Pro', serif;
+    font-weight: bold;
+    overflow-x: hidden;
+}

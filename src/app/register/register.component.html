@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="container py-5 mt-5">
+    <div class="row">
+        <div class="col-7 d-flex align-items-center justify-content-center">
+            <img src="https://d2tyltutevw8th.cloudfront.net/media/image/open-banking-1200-1662083126.jpg" alt="login-image" class="img-fluid">
+        </div>
+        <div class="col-5 align-items-center justify-content-center">
+            <form (ngSubmit)="register()" [formGroup]="registerForm" class="p-4">
+                <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                    <input name="uname" formControlName="uname" type="text"  class="form-control form-control-lg" placeholder="Username"/>
+                  </div>
+                  <!-- invalid username -->
+                  <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger mb-2">
+                      Inavalid username
+                  </div>
+                <!-- Account number input -->
+                <div class="form-outline mb-4">
+                  <input name="acno" formControlName="acno" type="text"  class="form-control form-control-lg" placeholder="Account Number" />
+                </div>
+                <!-- invalid account number -->
+                <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger mb-2">
+                    Inavalid Account Number
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input name="pswd" formControlName="pswd" type="password"  class="form-control form-control-lg" placeholder="Password" />
+                </div>
+                <!-- invalid password -->
+                <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger mb-2">
+                    Inavalid Password
+                </div>
+                <div class="text-danger">{{ errorMsg }}</div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-lg btn-block w-100">Register</button>
+             </form>
+        </div>
+    </div>
+</div>
+
